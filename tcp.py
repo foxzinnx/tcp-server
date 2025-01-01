@@ -36,7 +36,7 @@ def authentication(con, client, max_attempts):
         con.sendall("Password: ".encode())
         password = con.recv(1024).decode().strip()
 
-        if user == "admin" and password == "administrator":
+        if user == "admin" and password == "administrator": # Change or remove this.
             con.sendall(f"Logged in, Welcome back {user}\n".encode())
             print(f"{Fore.GREEN}User: {Fore.YELLOW}{client[0]} {Fore.GREEN}logged in successfully.")
             return True
